@@ -1,79 +1,254 @@
 body {
-    border: 0;
     margin: 0;
+    padding: 0;
     height: 100%;
     width: 100%;
-    background: #3D819D;
+    background: greenyellow;
+    position: relative;
 }
 
 nav {
-    width: 100%;
-    background: #024CB1;
+    box-shadow: 0 1px 10px black;
+    z-index: 1;
+    position: relative;
 }
 
 nav > ul {
-    list-style-type: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.flex-parent {
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: space-around;
-    margin: 0 auto;
-    width: 77%;
+    align-items: stretch;
     height: 40px;
-    margin-top: 10px;
+    text-align: center;
+    background: linear-gradient(white, rgb(228, 228, 228));
 }
 
-nav > ul > li {
-    background: #6944AC;
-    width: 200px;
-    height: 45px;
-    text-align: center;
-    transform: skewX(-20deg);
+
+
+.flex-child{
     cursor: pointer;
+    font-family: sans-serif;
+    font-weight: bold;
+    line-height: 40px;
+    flex-grow: 2;
+    border-right: 1px solid rgb(233, 233, 233);
 }
 
-nav > ul > li > a {
-    transform: skewX(0deg);
-    height: 45px;
-    line-height: 45px;
-    width: 100%;
-    display: block;
-    text-decoration: none;
-    color: #D7C9F1;
-    font-size: 25px;
+nav a:hover, nav a:visited, nav a:link, nav a:active
+{
+    color: black;
+    text-decoration: none !important;
 }
 
-nav > ul > li > a:hover {
-    background: #8C6CC5;
-    color: #F9F7F3;
+.flex-child:hover{
+    color: grey;
+    background: linear-gradient(rgb(228, 228, 228), white);
 }
 
-main {
-    position: absolute;
-    z-index: -1;
+.flex-parent a:first-child{
+    max-width: 40px;
+    color: transparent;
+    text-shadow: 0 0 0 black;
+}
+
+.flex-child:first-child:hover{
+    color: transparent;
+    text-shadow: 0 0 0 orange;
+}
+
+.flex-child:nth-child(2):hover{
+    color: green;
+}
+
+.flex-child:nth-child(3):hover{
+    color: rgb(212, 212, 0);
+}
+
+.flex-child:nth-child(4):hover{
+    color: red;
+}
+
+.flex-child:last-child{
+    border: 0;
+}
+
+main{
+    overflow:hidden;
+    position: relative;
+    z-index: 0;
     margin: 0 auto;
-    overflow: auto;
-    min-height: 100%;
-    width: 80%;
-    background: #F9F7F3;
-    text-align: center;
-    top: 0;
-    right: 0;
     left: 0;
-    padding-top: 50px;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    background: #F9F7F3;
+}
+
+main > h1 {
+    text-align: center;
+    margin: 20px;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.logo {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 main > p {
-    width: 90%;
-    margin: 0 auto;
-    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-footer {
-    border: 2px;
-    border-color: black;
-    margin: 0 auto;
-    overflow: auto;
-    min-height: 100%;
-    width: 80%;
-    background: #F9F7F3;
+hr {
+    border: 0;
+    border-top: 1px solid black;
+    width: 100%;
+    height: 2px;
+    background: greenyellow;
+}
+
+footer > hr {
+    width: 90%;
+}
+
+footer{
+    background: rgb(228, 228, 228);
+}
+
+
+
+.flexprof-parent {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    align-content: stretch;
+    max-height: 200px;
+    width: 100%;
+    padding: 0;
+}
+
+.flexprof-child{
+    margin: 0;
+}
+
+.flexprof-child > h3{
+    margin-left: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.flexprof-child:first-child {
+    border-bottom: 1px solid black;
+}
+
+
+.flexprof-parent2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    height: 100%;
+    margin: 20px;
+    padding: 0;
+}
+
+.flexprof-child2 {
+    margin: 10px;
+}
+
+.flexprof-child2:first-child {
+    border-radius: 40px;
+}
+
+.flexprof-child2:nth-child(2) {
+    flex-grow: 2;
+    line-height: 20px;
+}
+
+.flexprof-child2:last-child {
+    flex-grow: 0;
+}
+
+.flexprof-child2:last-child > a {
+    cursor: pointer;
+    border: 0.5px dotted black;
+    line-height: 20px;
     text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: sans-serif;
+    background: linear-gradient(white, rgb(228, 228, 228));
+    display: block;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.flexprof-child2:last-child > a:hover {
+    background: linear-gradient(rgb(228, 228, 228), white);
+}
+
+.flexfooter-parent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+    height: 100%;
+    background: linear-gradient(white, rgb(228, 228, 228));
+    margin-bottom: 10px;
+}
+
+.flexfooter-child {
+    width: 50%;
+}
+
+.flexfooter-child:first-child {
+    font-family: sans-serif;
+    
+}
+
+.flexfooter-child:first-child > ul {
+    list-style: square;
+    
+}
+
+.flexfooter-child:first-child > ul > li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.flexfooter-child:first-child > ul > li > a{
+    color: green;
+}
+
+.flexfooter-child:first-child > ul > a > img{
+    width: 5%;
+}
+
+.flexfooter-child:last-child {
+    border: 1px dashed skyblue;
+    margin-right: 10px;
+}
+
+.flexfooter-child:last-child:hover, .flexfooter-child:last-child:visited, .flexfooter-child:last-child:link, .flexfooter-child:last-child:active {
+    border: 1px dashed blue;
+}
+
+.flexfooter-child > a > img {
+    width: 100%;
+    height: 100%;
 }
