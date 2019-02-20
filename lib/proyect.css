@@ -178,7 +178,7 @@ main > div > a {
 
 footer > div {
     display: flex;
-    align-content: space-around;
+    align-content: space-between;
     width: 80%;
     margin: 0 auto;
     padding-bottom: 20px;
