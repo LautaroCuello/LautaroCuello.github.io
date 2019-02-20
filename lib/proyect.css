@@ -1,0 +1,198 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* NAVBAR CSS */
+
+nav {
+    
+}
+
+nav > ul{
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    background: linear-gradient(rgb(210, 210, 210), white);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav > ul > a {
+    flex: 1;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(100, 100, 100);
+    display: inline-block;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-image: linear-gradient(to top, black, rgba(210, 210, 210, 0)) 1 100%;
+}
+
+nav > ul > a:last-child{
+    border-right: none;
+}
+
+/* MAIN */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 80%;
+    margin: 0 auto;
+    background: rgba(210, 210, 210, 0.1);
+    box-shadow: 0 0 9px 1px rgb(210, 210, 210);
+}
+
+/* HEADER */
+
+header {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 3%;
+}
+
+header > h1 {
+    font-family: sans-serif;
+}
+
+header > img {
+    width: 20%;
+}
+
+/* ARTICLE */
+
+article > hr {
+    width: 80%;
+    color: rgb(210, 210, 210);
+}
+
+article > section > h2 {
+    font-family: sans-serif;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+article > section > h3 {
+    font-family: sans-serif;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+article > section > hr {
+    color: white;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+article > section > p {
+    width: 80%;
+    text-align: center;
+    font-size: 14pt;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.prof_flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+}
+
+.prof_flex > span {
+    margin: 20px;
+    padding: 10px;
+}
+
+.prof_flex > span:nth-child(odd) {
+    margin: 20px;
+}
+
+.prof_flex > span > img {
+    border-radius: 40px;
+    width: 80px;
+    margin: 0 auto;
+    display: block;
+}
+
+.prof_flex > span > p {
+    margin: 20px auto;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.mat_flex {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.mat_flex > span:nth-child(even) {
+    background: #2098D1;
+    color: white;
+}
+
+
+.mat_flex > span > h4 {
+    margin-left: 20px;
+    font-family: sans-serif;
+}
+
+main > div {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+    background: #2098D1;
+    color: white;
+    font-size: 16pt;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+main > div > a {
+    color: white;
+    text-decoration: none;
+}
+
+/* FOOTER */
+
+footer > div {
+    display: flex;
+    align-content: space-between;
+}
+
+footer > div > span{
+    flex: 1;
+}
+
+footer > div > span > ul {
+    font-family: sans-serif;
+    list-style-type: square;
+}
+
+footer > div > span > ul > li{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* MEDIA */
