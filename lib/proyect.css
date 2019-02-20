@@ -207,11 +207,15 @@ footer > div > span > div > iframe {
 /* MEDIA */
 
 @media (min-width: 0px) {
+    header > img { width: 50%; }
     main { width: 100%; }
-    footer > div { flex-direction: column; }
+    footer > div { flex-direction: column; width: 100%;}
+    footer > div > span > div > iframe { border: none; width: 300px; }
 }
 
 @media (min-width: 1024px) {
+    header > img { width: 20%; }
     main { width: 80% }
-    footer > div { flex-direction: row; }
+    footer > div { flex-direction: row; width: 80%; }
+    footer > div > span > div > iframe { border: dashed gray 1px ; width: 400px; }
 }
