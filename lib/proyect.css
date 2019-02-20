@@ -206,7 +206,7 @@ footer > div > span > div > iframe {
 
 /* MEDIA */
 
-@media (min-width: 768px) {
+@media (min-width: 0px) {
     main { width: 100%; }
     footer > div { flex-direction: column; }
 }
