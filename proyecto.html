@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body{
+            font-family: sans-serif;
+        }
+        form{
+            display: inline;
+        }
+        .input-style{
+            text-align: end;
+            color: grey;
+        }
+        #ttyav{
+            width: 50%;
+            float: left;
+        }
+        #tvotya{
+            width: 50%;
+            float: right;
+        }
+        label{
+            display:block;
+        }
+        input{
+            margin: 10px;
+            margin-left: 20px;
+        }
+        </style>
+        <script src="js.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <form id="ttyav">
+            <fieldset>
+                <legend>Tabla de titulos y antecedentes valorables</legend>
+                <label for="ttyav_titulo"><b>A) </b>Título</label>
+                <input type="text" name="ttyav_titulo" value="hasta 10 a&ntilde;os" onclick="borrarCampo(this)" class="input-style" required>
+                <br>
+                <label for="ttyav_antiguedad_titulo"><b>B) </b>Antiguedad de título</label>
+                <input type="text" name="ttyav_antiguedad_titulo" value="hasta 10 a&ntilde;os" onclick="borrarCampo(this)" class="input-style" required>
+                <br>
+                <label for="ttyav_promedio_titulo"><b>C) </b>Promedio de título</label>
+                <input type="radio" name="ttyav_promedio_titulo" value="0.2" required>9.51 a 10.00<br>
+                <input type="radio" name="ttyav_promedio_titulo" value="0.15" required>8.00 a 9.50<br>
+                <input type="radio" name="ttyav_promedio_titulo" value="0.1" required>6.00 a 7.99<br>
+                <input type="radio" name="ttyav_promedio_titulo" value="0" required>Menor a 5.99?
+                <br>
+                <label for="ttyav_antiguedad_doc_edsup"><b>D) </b>Antiguedad docente como profesor o ayudante de catedra de Educacion Superior (desempeño rentado)</label>
+                <input type="text" name="ttyav_antiguedad_doc_edsup" value="hasta 10 a&ntilde;os" onclick="borrarCampo(this)" class="input-style" required>
+                <br>
+                <label for="ttyav_antiguedad_doc_misma_area"><b>E) </b>Antiguedad docente en el nivel, en la misma area de incumbencia en que se postula</label>
+                <input type="text" name="ttyav_antiguedad_doc_misma_area" value="hasta 10 a&ntilde;os" onclick="borrarCampo(this)" class="input-style" required>
+                <br>
+                <label for="ttyav_antiguedad_doc_desfav"><b>F) </b>Antiguedad docente en establecimientos considerados "desfavorables"</label>
+                <input type="text" name="ttyav_antiguedad_doc_desfav" value="hasta 10 a&ntilde;os" onclick="borrarCampo(this)" class="input-style" required>
+                <br>
+                <label for="ttyav_antiguedad_doc_mismo_escalafon"><b>G) </b>Antiguedad docente en cargos del mismo item escalafonario (maestro, maestro especial, tecnico docente, profesor) en otro nivel</label>
+                <input type="text" name="ttyav_antiguedad_doc_mismo_escalafon" value="hasta 10 a&ntilde;os" onclick="borrarCampo(this)" class="input-style" required>
+                <br>
+                <label for="ttyav_antiguedad_doc_perspectivas"><b>H) </b>Para perspectivas, espacios o asignaturas referidas a didacticas y practicas docentes, antiguedad docente en cargos del mismo item escalafonario en el nivel y/o modalidad para el que forma la carrera</label>
+                <input type="text" name="ttyav_antiguedad_doc_perspectivas" value="hasta 10 a&ntilde;os" onclick="borrarCampo(this)" class="input-style" required>
+                <br>
+                <label for="ttyav_antiguedad_doc_perspectivas_desfavorables"><b>I) </b>En estableciemientos calificados como "desfavorables"</label>
+                <input type="text" name="ttyav_antiguedad_doc_perspectivas_desfavorables" value="hasta 10 a&ntilde;os" onclick="borrarCampo(this)" class="input-style" required>
+                <br>
+                <label for="ttyav_antiguedad_calif_ult"><b>J) </b>Calificacion de los dos ultimos años en que haya sido calificado como profesor de nivel</label>
+                <input type="radio" name="ttyav_antiguedad_calif_ult" value="1" required>9.50 a 10.00 o Sobresaliente<br>
+                <input type="radio" name="ttyav_antiguedad_calif_ult" value="0.5" required>8.00 a 9.49 o Distingido<br>
+                <input type="radio" name="ttyav_antiguedad_calif_ult" value="0.1" required>6.00 a 7.99 o Bueno<br>
+                <input type="radio" name="ttyav_antiguedad_calif_ult" value="0" required>Menor a 5.99?
+                <br>
+                <label for="ttyav_antiguedad_otros_titulos"><b>K) </b>Otros titulos y certificados bonificantes</label>
+                <input type="text" name="ttyav_antiguedad_otros_titulos" value="hasta 10 a&ntilde;os" onclick="borrarCampo(this)" class="input-style" required>
+                <br>
+                <input type="button" value="Obtener resultado" onclick="ttyav_obtenerResultado()">
+                <input type="reset" value="Reiniciar">
+                <br>
+                <label for="ttyav_resultado">Resultado</label>
+                <input type="text" name="ttyav_resultado" disabled>
+            </fieldset>
+        </form>
+        <form id="tvotya">
+            <fieldset>
+                <legend>Tabla de valoracion de otros titulos y antecedentes, especificos para la Educacion Superior</legend>
+            </fieldset>
+        </form>
+    </body>
+</html>
