@@ -29,20 +29,29 @@ class Columna {
     get cantPisos(){return this.cant_pisos;}
     get areaInfluencia(){return this.x * this.y;} //M2
     get totalPisos(){return this.cargaPiso * this.cantPisos;}
-    get ns(){return this.areaInfluencia * 9 * this.totalPisos;} //Kn
+    get ns(){return this.areaInfluencia * this.cargaPiso * this.cantPisos;} //Kn
     get ag(){return (2.15 * this.ns*100)/(0.85*300);} //cm2
+    get nsTexto(){
+        return `Ns Columna (kN) = (${this.x}m ancho * ${this.y}m alto) * ${this.cargaPiso} kN/m2 * ${this.cantPisos} pisos = ${this.ns} kN`;
+    }
+    get agTexto(){
+        return `Ag Columna (cm2) = (2,15 * (${this.ns} kN * 100)) / (0,85 * 300 kg/cm2) = ${this.ag} cm2;`;
+    }
 };
 
 function crearColumna(){
-    let col_x = document.getElementById('columna_x').value;
-    let col_y = document.getElementById('columna_y').value;
-    let col_carga_piso = document.getElementById('columna_carga_piso').value;
-    let col_cantidad_piso = document.getElementById('columna_cantidad_piso').value;
-    if(isNumber(col_x) && isNumber(col_y) && isNumber(col_carga_piso) && isNumber(col_cantidad_piso)){
+    let col_x = parseFloat(document.getElementById('columna_x').value);
+    let col_y = parseFloat(document.getElementById('columna_y').value);
+    let col_carga_piso = parseFloat(document.getElementById('columna_carga_piso').value);
+    let col_cantidad_piso = parseFloat(document.getElementById('columna_cantidad_piso').value);
+    if(true){
         let columna = new Columna(col_x, col_y, col_carga_piso, col_cantidad_piso);
-        let ns = "Ns Columna (kN) = (" + columna.x + " ancho * " + columna.y + " alto) m2 * 9 kN/m2 * (" + columna.cargaPiso + " kN * " + columna.cantPisos + " pisos) = " + columna.ns + " kN";
         let ag = "Ag Columna (cm2) = (2,15 * " + columna.ns + " kN) / (0,85 * 300 kg/cm2) = " + columna.ag + " cm2";
-        document.getElementById('resultado').innerHTML = "<p>" + ns + "<br>" + ag + "</p>";
+        document.getElementById('resultado').innerHTML = "<p>" + columna.nsTexto + "<br>" + columna.agTexto + "</p>";
+        document.getElementById('col_table').innerHTML += "<tr><td>" + (document.getElementById('col_table').getElementsByTagName('tr').length + 1) + "</td><td>" + columna.ns + "</td><td>" + columna.ag + "</td></tr>";
+        columna.texto;
+    } else {
+        alert("error");
     }
 }
 
