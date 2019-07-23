@@ -38,11 +38,8 @@ class Columna {
 };
 
 function crearColumna(){
+    alert(5);/*
     let columna = new Columna(document.getElementById('columna_x').value, document.getElementById('columna_y').value, document.getElementById('columna_carga_piso').value, document.getElementById('columna_cantidad_piso').value);
     document.getElementById('resultado').innerHTML = "<p>" + columna.nsTexto + "<br>" + columna.agTexto + "</p>";
-    document.getElementById('col_table').insertAdjacentHTML('beforeend',"<tr><td>" + (document.getElementById('col_table').getElementsByTagName('tr').length + 1) + "</td><td>" + columna.ns + "</td><td>" + columna.ag + "</td></tr>");
-};
-
-function isNumber(valor){
-    return !isNaN(parseFloat(valor)) && isFinite(valor);
+    document.getElementById('col_table').insertAdjacentHTML('beforeend',"<tr><td>" + (document.getElementById('col_table').getElementsByTagName('tr').length + 1) + "</td><td>" + columna.ns + "</td><td>" + columna.ag + "</td></tr>");*/
 };
