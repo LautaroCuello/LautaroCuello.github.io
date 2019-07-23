@@ -1,3 +1,7 @@
+'use strict';
+
+var columnas = [];
+
 class Tabique {
     constructor(x, y, largo){
         this.tab_x = x;
@@ -36,7 +40,25 @@ class Columna {
 };
 
 function crearColumna(){
-    let columna = new Columna(document.getElementById('columna_x').value, document.getElementById('columna_y').value, document.getElementById('columna_carga_piso').value, document.getElementById('columna_cantidad_piso').value);
-    document.getElementById('resultado').innerHTML = "<p>" + columna.nsTexto + "<br>" + columna.agTexto + "</p>";
-    document.getElementById('col_table').insertAdjacentHTML('beforeend',"<tr><td>" + (document.getElementById('col_table').getElementsByTagName('tr').length + 1) + "</td><td>" + columna.ns + "</td><td>" + columna.ag + "</td></tr>");
+    let col_x = document.getElementById('columna_x').value;
+    let col_y = document.getElementById('columna_y').value;
+    let col_carga = document.getElementById('columna_carga_piso').value;
+    let col_cant = document.getElementById('columna_cantidad_piso').value;
+    if(parseFloat(col_x) && parseFloat(col_y) && parseFloat(col_carga) && parseInt(col_cant) && parseInt(col_cant) >= 1){
+        columnas.push(new Columna(parseFloat(col_x), parseFloat(col_y), parseFloat(col_carga), parseInt(col_cant)));
+        let position = document.getElementById('col_table').getElementsByTagName('tr').length;
+        document.getElementById('resultado').innerHTML = "<p>" + columnas[position].nsTexto + "<br><br>" + columnas[position].agTexto + "</p>";
+        let htmlInsert = "<tr><td>" + (position + 1) + "</td><td>" + columnas[position].ns + "</td><td>" + columnas[position].ag + "</td><td onclick='toggleData(columnas["+ position +"], "+ position +")'>+</td></tr><div id='col" + position + "'></div>";
+        document.getElementById('col_table').insertAdjacentHTML('beforeend', htmlInsert);
+    } else {
+        alert('error');
+    }
 };
+
+function toggleData(datos, valor){
+    if(document.getElementById('col' + valor).innerHTML === ""){
+        document.getElementById('col' + valor).innerHTML = datos.nsTexto + "<br><br>" + datos.agTexto;
+    } else {
+        document.getElementById('col' + valor).innerHTML = "";
+    }
+}
