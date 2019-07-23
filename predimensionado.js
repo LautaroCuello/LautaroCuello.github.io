@@ -1,5 +1,3 @@
-'use strict';
-
 class Tabique {
     cant_pisos = 1;
     f_compresion = 300;
@@ -40,21 +38,11 @@ class Columna {
 };
 
 function crearColumna(){
-    let col_x = parseFloat(document.getElementById('columna_x').value);
-    let col_y = parseFloat(document.getElementById('columna_y').value);
-    let col_carga_piso = parseFloat(document.getElementById('columna_carga_piso').value);
-    let col_cantidad_piso = parseInt(document.getElementById('columna_cantidad_piso').value);
-    if(true){
-        let columna = new Columna(col_x, col_y, col_carga_piso, col_cantidad_piso);
-        let ag = "Ag Columna (cm2) = (2,15 * " + columna.ns + " kN) / (0,85 * 300 kg/cm2) = " + columna.ag + " cm2";
-        document.getElementById('resultado').innerHTML = "<p>" + columna.nsTexto + "<br>" + columna.agTexto + "</p>";
-        document.getElementById('col_table').innerHTML += "<tr><td>" + (document.getElementById('col_table').getElementsByTagName('tr').length + 1) + "</td><td>" + columna.ns + "</td><td>" + columna.ag + "</td></tr>";
-        columna.texto;
-    } else {
-        alert("error");
-    }
-}
+    let columna = new Columna(document.getElementById('columna_x').value, document.getElementById('columna_y').value, document.getElementById('columna_carga_piso').value, document.getElementById('columna_cantidad_piso').value);
+    document.getElementById('resultado').innerHTML = "<p>" + columna.nsTexto + "<br>" + columna.agTexto + "</p>";
+    document.getElementById('col_table').insertAdjacentHTML('beforeend',"<tr><td>" + (document.getElementById('col_table').getElementsByTagName('tr').length + 1) + "</td><td>" + columna.ns + "</td><td>" + columna.ag + "</td></tr>");
+};
 
 function isNumber(valor){
     return !isNaN(parseFloat(valor)) && isFinite(valor);
-}
+};
