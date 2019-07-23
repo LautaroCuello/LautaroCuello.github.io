@@ -79,6 +79,7 @@
     <script>
         window.addEventListener('load', function(){
             document.getElementById('col_calcular').addEventListener('click', function(){crearColumna()});
+            document.getElementById('col_calcular').addEventListener('touchstart', function(){crearColumna()});
         });
         document.getElementById('col_calcular').onclick = crearColumna();
     </script>
