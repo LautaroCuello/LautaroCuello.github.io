@@ -1,6 +1,4 @@
 class Tabique {
-    cant_pisos = 1;
-    f_compresion = 300;
     constructor(x, y, largo){
         this.tab_x = x;
         this.tab_y = y;
@@ -10,7 +8,7 @@ class Tabique {
     get ns(){return this.areaInfluencia * 9 * this.cant_pisos}
     get ag(){return (2.15 * this.ns*100)/(0.85*this.f_compresion);} //Area
     get espesor(){return this.ag**2/this.tab_largo;}
-}
+};
 
 class Columna {
     constructor(col_x, col_y, carga_piso, cant_pisos){
@@ -38,8 +36,7 @@ class Columna {
 };
 
 function crearColumna(){
-    alert(5);/*
     let columna = new Columna(document.getElementById('columna_x').value, document.getElementById('columna_y').value, document.getElementById('columna_carga_piso').value, document.getElementById('columna_cantidad_piso').value);
     document.getElementById('resultado').innerHTML = "<p>" + columna.nsTexto + "<br>" + columna.agTexto + "</p>";
-    document.getElementById('col_table').insertAdjacentHTML('beforeend',"<tr><td>" + (document.getElementById('col_table').getElementsByTagName('tr').length + 1) + "</td><td>" + columna.ns + "</td><td>" + columna.ag + "</td></tr>");*/
+    document.getElementById('col_table').insertAdjacentHTML('beforeend',"<tr><td>" + (document.getElementById('col_table').getElementsByTagName('tr').length + 1) + "</td><td>" + columna.ns + "</td><td>" + columna.ag + "</td></tr>");
 };
