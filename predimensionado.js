@@ -43,7 +43,7 @@ function crearColumna(){
     let col_x = parseFloat(document.getElementById('columna_x').value);
     let col_y = parseFloat(document.getElementById('columna_y').value);
     let col_carga_piso = parseFloat(document.getElementById('columna_carga_piso').value);
-    let col_cantidad_piso = parseFloat(document.getElementById('columna_cantidad_piso').value);
+    let col_cantidad_piso = parseInt(document.getElementById('columna_cantidad_piso').value);
     if(true){
         let columna = new Columna(col_x, col_y, col_carga_piso, col_cantidad_piso);
         let ag = "Ag Columna (cm2) = (2,15 * " + columna.ns + " kN) / (0,85 * 300 kg/cm2) = " + columna.ag + " cm2";
